@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIC Policy Plans — Life Insurance Corporation of India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C8972B;
+      --gold-light: #F5E6C8;
+      --gold-mid: #E8C97A;
+      --dark-blue: #0D2340;
+      --mid-blue: #1A3A5C;
+      --light-blue: #E6F1FB;
+      --light-bg: #F8F6F0;
+      --white: #ffffff;
+      --text-muted: rgba(13,35,64,0.55);
+      --border: rgba(13,35,64,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--light-bg);
+      color: var(--dark-blue);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--dark-blue);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 34px; height: 34px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 16px; color: #fff;
+    }
+    .logo-text { color: #fff; font-size: 15px; font-weight: 500; }
+    .logo-text span { color: var(--gold-mid); }
+    .header-links { display: flex; gap: 4px; }
+    .header-link {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .header-link:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .header-cta {
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .header-cta:hover { background: #a97a1e; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0D2340 0%, #1A3A5C 55%, #0F3A6E 100%);
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(200,151,43,0.15);
+      pointer-events: none;
+    }
+    .hero-ring.r1 { width: 320px; height: 320px; top: -100px; right: -80px; }
+    .hero-ring.r2 { width: 200px; height: 200px; bottom: -60px; left: -50px; }
+    .hero-ring.r3 { width: 480px; height: 480px; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.5; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(200,151,43,0.2);
+      color: #F5E6C8;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(200,151,43,0.3);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 46px);
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 15px;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .stat-divider { width: 1px; height: 44px; background: rgba(255,255,255,0.15); }
+
+    /* ── NAV TABS ── */
+    .nav-tabs {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      position: sticky;
+      top: 60px;
+      z-index: 90;
+    }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 14px 22px;
+      cursor: pointer;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--dark-blue); background: rgba(13,35,64,0.04); }
+    .tab-btn.active { color: var(--dark-blue); border-bottom-color: var(--gold); }
+
+    /* ── CONTENT SECTIONS ── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+    .section-header { margin-bottom: 1.8rem; }
+    .gold-line { width: 36px; height: 3px; background: var(--gold); border-radius: 2px; margin-bottom: 12px; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--dark-blue);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .section-subtitle { font-size: 13px; color: var(--text-muted); }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 1.6rem;
+    }
+    .filter-btn {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--dark-blue);
+      color: var(--white);
+      border-color: var(--dark-blue);
+    }
+
+    /* ── PLAN CARDS ── */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .plan-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .plan-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s;
+    }
+    .plan-card:hover { box-shadow: 0 6px 24px rgba(13,35,64,0.1); transform: translateY(-3px); }
+    .plan-card:hover::after, .plan-card.selected::after { transform: scaleX(1); }
+    .plan-card.selected { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,151,43,0.18); }
+    .plan-card.hidden { display: none; }
+
+    .plan-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      background: var(--gold-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .plan-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark-blue);
+      margin-bottom: 6px;
+    }
+    .plan-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .tag-endowment { background: #E1F5EE; color: #0F6E56; }
+    .tag-term      { background: #E6F1FB; color: #185FA5; }
+    .tag-pension   { background: #FAEEDA; color: #854F0B; }
+    .tag-child     { background: #FBEAF0; color: #993556; }
+    .tag-ulip      { background: #EEEDFE; color: #534AB7; }
+    .tag-health    { background: #EAF3DE; color: #3B6D11; }
+    .tag-women     { background: #FBEAF0; color: #993556; }
+    .tag-wholelife { background: #E1F5EE; color: #0F6E56; }
+
+    .plan-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .plan-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid rgba(13,35,64,0.07);
+    }
+    .plan-sum-label { font-size: 11px; color: var(--text-muted); }
+    .plan-sum-val { font-size: 14px; font-weight: 500; color: var(--dark-blue); }
+    .details-btn {
+      font-size: 12px;
+      color: var(--gold);
+      border: 1px solid rgba(200,151,43,0.4);
+      background: transparent;
+      padding: 5px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+    }
+    .details-btn:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+    /* ── COMPARE BAR ── */
+    .compare-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 14px 2rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      box-shadow: 0 -4px 20px rgba(13,35,64,0.1);
+      z-index: 80;
+    }
+    .compare-bar.show { display: flex; }
+    .compare-bar-label { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+    .compare-chips { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+    .chip {
+      background: var(--gold-light);
+      color: var(--dark-blue);
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .chip-x {
+      cursor: pointer;
+      color: rgba(13,35,64,0.4);
+      font-size: 16px;
+      line-height: 1;
+    }
+    .chip-x:hover { color: var(--dark-blue); }
+    .compare-actions { display: flex; gap: 10px; }
+    .compare-clear-btn {
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .compare-go-btn {
+      background: var(--dark-blue);
+      color: #fff;
+      border: none;
+      padding: 8px 22px;
+      border-radius: 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .compare-go-btn:hover { background: var(--gold); }
+
+    /* ── COMPARE TABLE ── */
+    .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: var(--white);
+    }
+    .compare-table th {
+      background: var(--dark-blue);
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+    .compare-table th:first-child { background: #0a1c30; }
+    .compare-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid rgba(13,35,64,0.07);
+      color: var(--dark-blue);
+      vertical-align: middle;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: rgba(200,151,43,0.04); }
+    .compare-table td:first-child {
+      color: var(--text-muted);
+      font-size: 12px;
+      background: rgba(13,35,64,0.02);
+      font-weight: 500;
+    }
+    .tick { color: #1D9E75; font-weight: 600; }
+    .cross { color: #E24B4A; }
+    .badge-yes { background: #E1F5EE; color: #0F6E56; padding: 2px 8px; border-radius: 8px; font-size: 11px; }
+    .badge-no  { background: #FCEBEB; color: #A32D2D; padding: 2px 8px; border-radius: 8px; font-size: 11px; }
+
+    /* ── PREMIUM CALCULATOR ── */
+    .calc-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .calc-body { padding: 2rem; }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 560px) { .calc-grid { grid-template-columns: 1fr; } }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid rgba(13,35,64,0.2);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--dark-blue);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(200,151,43,0.12);
+    }
+    .calc-result-panel {
+      background: var(--dark-blue);
+      border-radius: 12px;
+      padding: 1.8rem;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .calc-result-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .calc-result-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .calc-result-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 4px;
+    }
+    .calc-breakdown {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 16px;
+    }
+    .calc-bk-item { text-align: center; }
+    .calc-bk-val { font-size: 16px; font-weight: 500; color: rgba(255,255,255,0.9); }
+    .calc-bk-label { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+    .calc-bk-divider { width: 1px; background: rgba(255,255,255,0.12); }
+    .calc-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 1rem;
+      background: rgba(13,35,64,0.03);
+      border-top: 1px solid var(--border);
+    }
+    .primary-btn {
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 16px;
+      transition: background 0.2s;
+    }
+    .primary-btn:hover { background: #a97a1e; }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 2rem;
+    }
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .contact-card:hover { box-shadow: 0 4px 16px rgba(13,35,64,0.08); }
+    .contact-emoji { font-size: 26px; margin-bottom: 10px; display: block; }
+    .contact-title { font-size: 13px; font-weight: 500; color: var(--dark-blue); margin-bottom: 5px; }
+    .contact-val { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+    .contact-val a { color: var(--gold); text-decoration: none; }
+    .contact-val a:hover { text-decoration: underline; }
+
+    .help-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.6rem;
+      margin-bottom: 2rem;
+    }
+    .help-box-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--dark-blue);
+      margin-bottom: 6px;
+    }
+    .help-box-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .help-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .help-action-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--dark-blue);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .help-action-btn:hover { background: var(--dark-blue); color: #fff; border-color: var(--dark-blue); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-blue);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 2rem;
+      font-size: 12px;
+      line-height: 1.8;
+      margin-top: 2rem;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer strong { color: rgba(255,255,255,0.85); }
+
+
+    /* ── PLAN DETAILS MODAL ── */
+    .plan-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(13,35,64,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .plan-modal-overlay.open { display: flex; }
+    .plan-modal-box {
+      background: var(--white);
+      border-radius: 18px;
+      max-width: 620px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(13,35,64,0.25);
+      animation: modalIn 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.92) translateY(20px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .plan-modal-close {
+      position: sticky;
+      top: 1rem;
+      float: right;
+      margin: 1rem 1rem 0 0;
+      background: rgba(13,35,64,0.07);
+      border: none;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      font-size: 14px;
+      color: var(--dark-blue);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+      z-index: 2;
+    }
+    .plan-modal-close:hover { background: rgba(13,35,64,0.15); }
+    #planModalContent { padding: 1.5rem 1.8rem 2rem; }
+    .modal-plan-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 1rem;
+      padding-top: 0.25rem;
+    }
+    .modal-plan-icon {
+      width: 52px; height: 52px;
+      background: var(--gold-light);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .modal-plan-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark-blue);
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+    .modal-overview {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      background: var(--light-bg);
+      border-left: 3px solid var(--gold);
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.4rem;
+    }
+    .modal-section-title {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .modal-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 1.4rem;
+    }
+    @media (max-width: 480px) { .modal-specs-grid { grid-template-columns: 1fr; } }
+    .modal-spec {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+    .modal-spec-label { font-size: 11px; color: var(--text-muted); margin-bottom: 3px; }
+    .modal-spec-val { font-size: 13px; font-weight: 500; color: var(--dark-blue); }
+    .modal-features {
+      list-style: none;
+      margin-bottom: 1.4rem;
+    }
+    .modal-features li {
+      font-size: 13px;
+      color: var(--dark-blue);
+      padding: 7px 0 7px 22px;
+      border-bottom: 1px solid rgba(13,35,64,0.06);
+      position: relative;
+      line-height: 1.55;
+    }
+    .modal-features li:last-child { border-bottom: none; }
+    .modal-features li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 9px;
+      top: 10px;
+    }
+    .modal-footer-note {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      background: var(--light-blue);
+      border-radius: 8px;
+      padding: 10px 14px;
+      line-height: 1.6;
+    }
+    .modal-footer-note a { color: var(--gold); }
+
+    /* ── UTILITIES ── */
+    .hidden { display: none !important; }
+
+    @media (max-width: 640px) {
+      .hero { padding: 2.5rem 1rem 2rem; }
+      .hero-stats { gap: 1.5rem; }
+      .stat-divider { display: none; }
+      .section { padding: 1.5rem 1rem 2rem; }
+      .header-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">
+    <div class="logo-mark">L</div>
+    <span class="logo-text">LIC <span>India</span></span>
+  </a>
+  <nav class="header-links">
+    <a class="header-link" href="#plans">Plans</a>
+    <a class="header-link" href="#compare">Compare</a>
+    <a class="header-link" href="#calc">Calculator</a>
+    <a class="header-link" href="#contact">Contact</a>
+  </nav>
+  
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ring r1"></div>
+  <div class="hero-ring r2"></div>
+  <div class="hero-ring r3"></div>
+  <div class="hero-badge">Life Insurance Corporation of India</div>
+  <h1>Secure Your Future<br>with <span>LIC Policies</span></h1>
+  <p>India's most trusted insurer since 1956. Explore plans tailored to every life stage — protection, savings, retirement, and more.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">29Cr+</div>
+      <div class="stat-label">Policyholders</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">₹45L Cr</div>
+      <div class="stat-label">Policies in Force</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">2000+</div>
+      <div class="stat-label">Branch Offices</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">98.6%</div>
+      <div class="stat-label">Claim Settlement</div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV TABS -->
+<div class="nav-tabs" id="navTabs">
+  <button class="tab-btn active" onclick="showTab('plans', this)">All Plans</button>
+  <button class="tab-btn" onclick="showTab('compare', this)">Compare Plans</button>
+  <button class="tab-btn" onclick="showTab('calc', this)">Premium Calculator</button>
+  <button class="tab-btn" onclick="showTab('contact', this)">Contact & Support</button>
+</div>
+
+<!-- ===== TAB: ALL PLANS ===== -->
+<div id="tab-plans" class="section">
+  <div class="section-header">
+    <div class="gold-line"></div>
+    <div class="section-title">Explore LIC Policy Plans</div>
+    <div class="section-subtitle">Select up to 4 plans to compare side-by-side</div>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" onclick="filterPlans('all', this)">All Plans</button>
+    <button class="filter-btn" onclick="filterPlans('endowment', this)">Endowment</button>
+    <button class="filter-btn" onclick="filterPlans('term', this)">Term Plans</button>
+    <button class="filter-btn" onclick="filterPlans('pension', this)">Pension</button>
+    <button class="filter-btn" onclick="filterPlans('child', this)">Children's Plans</button>
+    <button class="filter-btn" onclick="filterPlans('ulip', this)">ULIPs</button>
+    <button class="filter-btn" onclick="filterPlans('health', this)">Health</button>
+  </div>
+
+  <!-- Plans grid -->
+  <div class="plans-grid" id="plansGrid">
+
+    <div class="plan-card" data-category="endowment" onclick="toggleSelect(this,'Jeevan Anand (915)')">
+      <div class="plan-icon">🛡️</div>
+      <div class="plan-name">LIC Jeevan Anand (915)</div>
+      <span class="plan-tag tag-endowment">Endowment</span>
+      <div class="plan-desc">A participating non-linked whole life endowment plan. After maturity, the sum assured continues as life cover till death — giving dual benefit of savings + lifelong protection.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Sum Assured</div>
+          <div class="plan-sum-val">₹1,00,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('jeevan-anand')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="endowment" onclick="toggleSelect(this,'Jeevan Labh (836)')">
+      <div class="plan-icon">💰</div>
+      <div class="plan-name">LIC Jeevan Labh (836)</div>
+      <span class="plan-tag tag-endowment">Endowment</span>
+      <div class="plan-desc">Limited premium payment with-profit endowment plan. Pay premiums for a shorter period, enjoy coverage for a longer policy term. Includes reversionary bonuses and final additional bonuses.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Sum Assured</div>
+          <div class="plan-sum-val">₹2,00,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('jeevan-labh')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="term" onclick="toggleSelect(this,'LIC Tech Term (854)')">
+      <div class="plan-icon">📋</div>
+      <div class="plan-name">LIC Tech Term (854)</div>
+      <span class="plan-tag tag-term">Term</span>
+      <div class="plan-desc">Online pure term insurance plan offering high life cover at very low premiums. Choose from Level Sum Assured or Increasing Sum Assured (grows by 10% every 5 years).</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Cover</div>
+          <div class="plan-sum-val">₹50,00,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('tech-term')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="term" onclick="toggleSelect(this,'LIC Jeevan Amar (855)')">
+      <div class="plan-icon">🔒</div>
+      <div class="plan-name">LIC Jeevan Amar (855)</div>
+      <span class="plan-tag tag-term">Term</span>
+      <div class="plan-desc">Non-linked, non-participating, offline pure protection term plan. Flexible options for level or increasing sum assured. Optional riders for critical illness and accidental death.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Cover</div>
+          <div class="plan-sum-val">₹25,00,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('jeevan-amar')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="pension" onclick="toggleSelect(this,'New Jeevan Shanti (858)')">
+      <div class="plan-icon">🌅</div>
+      <div class="plan-name">LIC New Jeevan Shanti (858)</div>
+      <span class="plan-tag tag-pension">Pension</span>
+      <div class="plan-desc">Single premium deferred annuity plan offering guaranteed income for life. Choose immediate or deferred annuity. Multiple annuity options — with or without return of purchase price.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Purchase Price</div>
+          <div class="plan-sum-val">₹1,50,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('jeevan-shanti')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="endowment" onclick="toggleSelect(this,'Jeevan Umang (945)')">
+      <div class="plan-icon">🌟</div>
+      <div class="plan-name">LIC Jeevan Umang (945)</div>
+      <span class="plan-tag tag-wholelife">Whole Life</span>
+      <div class="plan-desc">Whole life savings plan with annual survival benefits after premium paying term ends. Lump sum on maturity at age 100 or death claim, whichever is earlier — plus accrued bonuses.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Sum Assured</div>
+          <div class="plan-sum-val">₹2,00,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('jeevan-umang')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="child" onclick="toggleSelect(this,'Jeevan Tarun (834)')">
+      <div class="plan-icon">👶</div>
+      <div class="plan-name">LIC Jeevan Tarun (834)</div>
+      <span class="plan-tag tag-child">Children's Plan</span>
+      <div class="plan-desc">Participating endowment plan for children's future. Flexible survival benefit options from ages 20–24 (5%–25% annually). Remaining sum + bonuses at maturity (age 25). Premium waiver on parent's death.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Entry Age</div>
+          <div class="plan-sum-val">0–12 years</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('jeevan-tarun')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="ulip" onclick="toggleSelect(this,'LIC SIIP (852)')">
+      <div class="plan-icon">📈</div>
+      <div class="plan-name">LIC SIIP (852)</div>
+      <span class="plan-tag tag-ulip">ULIP</span>
+      <div class="plan-desc">Unit-linked insurance plan with guaranteed additions of 0.10% from 6th policy year onwards. Invest in equity, debt, or balanced funds. 4 fund options with flexible switching.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Annual Premium</div>
+          <div class="plan-sum-val">₹40,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('siip')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="endowment" onclick="toggleSelect(this,'Aadhaar Shila (844)')">
+      <div class="plan-icon">🧕</div>
+      <div class="plan-name">LIC Aadhaar Shila (844)</div>
+      <span class="plan-tag tag-women">Women's Plan</span>
+      <div class="plan-desc">Exclusive endowment plan for women with Aadhaar. Includes loyalty additions, inbuilt accidental death & disability benefit rider. Simple issuance — no medicals up to ₹3 lakh sum assured.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Sum Assured</div>
+          <div class="plan-sum-val">₹75,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('aadhaar-shila')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="health" onclick="toggleSelect(this,'LIC Cancer Cover (905)')">
+      <div class="plan-icon">💊</div>
+      <div class="plan-name">LIC Cancer Cover (905)</div>
+      <span class="plan-tag tag-health">Health</span>
+      <div class="plan-desc">Dedicated health plan against cancer at all stages. Benefits paid at early stage diagnosis + major stage. Premium waiver on early-stage detection. Increasing benefit option available.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Basic Sum Assured</div>
+          <div class="plan-sum-val">₹10,00,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('cancer-cover')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="child" onclick="toggleSelect(this,'New Children Money Back (932)')">
+      <div class="plan-icon">🎓</div>
+      <div class="plan-name">New Children Money Back (932)</div>
+      <span class="plan-tag tag-child">Children's Plan</span>
+      <div class="plan-desc">Money-back survival benefits at ages 18, 20 and 22. Final maturity benefit at 25 with bonuses. Inbuilt premium waiver benefit if proposer (parent) dies during policy term.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Entry Age (Child)</div>
+          <div class="plan-sum-val">0–12 years</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('children-money-back')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="pension" onclick="toggleSelect(this,'PM Vaya Vandana Yojana (842)')">
+      <div class="plan-icon">🏛️</div>
+      <div class="plan-name">PM Vaya Vandana Yojana (842)</div>
+      <span class="plan-tag tag-pension">Pension</span>
+      <div class="plan-desc">Government-backed pension scheme exclusively for senior citizens (60+). Guaranteed 8% annual return. Pension payable monthly, quarterly, half-yearly, or yearly for 10 years. Maximum invest ₹15 lakh.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Eligible Age</div>
+          <div class="plan-sum-val">60+ years</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('pmvvy')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="endowment" onclick="toggleSelect(this,'LIC Dhan Rekha (863)')">
+      <div class="plan-icon">💎</div>
+      <div class="plan-name">LIC Dhan Rekha (863)</div>
+      <span class="plan-tag tag-endowment">Endowment</span>
+      <div class="plan-desc">Non-linked, non-participating, individual savings plan with guaranteed additions. Guaranteed survival benefits at regular intervals. Choice of premium paying terms — 5, 6, or 10 years.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Basic Sum Assured</div>
+          <div class="plan-sum-val">₹2,00,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('dhan-rekha')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="pension" onclick="toggleSelect(this,'LIC Jeevan Akshay VII (857)')">
+      <div class="plan-icon">♾️</div>
+      <div class="plan-name">LIC Jeevan Akshay VII (857)</div>
+      <span class="plan-tag tag-pension">Pension</span>
+      <div class="plan-desc">Immediate annuity plan — single lump sum payment for lifelong pension. 10 annuity options to choose from. Available for individuals aged 30–85 years. Joint life option available.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Purchase Price</div>
+          <div class="plan-sum-val">₹1,00,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('jeevan-akshay')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="term" onclick="toggleSelect(this,'LIC Saral Jeevan Bima (859)')">
+      <div class="plan-icon">🤝</div>
+      <div class="plan-name">LIC Saral Jeevan Bima (859)</div>
+      <span class="plan-tag tag-term">Term</span>
+      <div class="plan-desc">Standard term insurance plan with simple features and easy issuance. Sum assured from ₹5 lakh to ₹25 lakh. No medical examination for small sum assured. Suitable for first-time insurance buyers.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Sum Assured Range</div>
+          <div class="plan-sum-val">₹5L – ₹25L</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('saral-jeevan')">Details →</button>
+      </div>
+    </div>
+
+    <div class="plan-card" data-category="endowment" onclick="toggleSelect(this,'LIC New Money Back 20 Years (920)')">
+      <div class="plan-icon">💸</div>
+      <div class="plan-name">LIC New Money Back – 20 Yrs (920)</div>
+      <span class="plan-tag tag-endowment">Money Back</span>
+      <div class="plan-desc">Participating money-back plan with survival benefits at 5th, 10th and 15th year (15% each). Balance 55% + bonuses at maturity (20 years). Full death benefit irrespective of survival payouts.</div>
+      <div class="plan-footer">
+        <div>
+          <div class="plan-sum-label">Min. Sum Assured</div>
+          <div class="plan-sum-val">₹1,00,000</div>
+        </div>
+        <button class="details-btn" onclick="event.stopPropagation(); openLIC('new-money-back-20')">Details →</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- COMPARE BAR -->
+<div class="compare-bar" id="compareBar">
+  <span class="compare-bar-label">Selected:</span>
+  <div class="compare-chips" id="compareChips"></div>
+  <div class="compare-actions">
+    <button class="compare-clear-btn" onclick="clearAll()">Clear</button>
+    <button class="compare-go-btn" onclick="showTab('compare', document.querySelectorAll('.tab-btn')[1])">Compare →</button>
+  </div>
+</div>
+
+<!-- ===== TAB: COMPARE ===== -->
+<div id="tab-compare" class="section hidden">
+  <div class="section-header">
+    <div class="gold-line"></div>
+    <div class="section-title">Plan Comparison</div>
+    <div class="section-subtitle">Key features of LIC's most popular plans side by side</div>
+  </div>
+  <div class="table-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Jeevan Anand</th>
+          <th>Tech Term</th>
+          <th>New Jeevan Shanti</th>
+          <th>Jeevan Labh</th>
+          <th>Jeevan Umang</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Plan Type</td>
+          <td>Endowment + Whole Life</td>
+          <td>Term (Pure Protection)</td>
+          <td>Deferred Annuity</td>
+          <td>Endowment (Ltd. Pay)</td>
+          <td>Whole Life + Survival</td>
+        </tr>
+        <tr>
+          <td>Premium Payment</td>
+          <td>Regular</td>
+          <td>Regular / Single / Ltd.</td>
+          <td>Single Premium</td>
+          <td>Limited Pay</td>
+          <td>Regular / Limited</td>
+        </tr>
+        <tr>
+          <td>Maturity Benefit</td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+          <td><span class="badge-no">✘ No</span></td>
+          <td><span class="badge-yes">✔ Annuity</span></td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+          <td><span class="badge-yes">✔ At age 100</span></td>
+        </tr>
+        <tr>
+          <td>Death Benefit</td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+        </tr>
+        <tr>
+          <td>Survival / Income Benefit</td>
+          <td><span class="badge-no">✘ No</span></td>
+          <td><span class="badge-no">✘ No</span></td>
+          <td><span class="badge-yes">✔ Regular Annuity</span></td>
+          <td><span class="badge-no">✘ No</span></td>
+          <td><span class="badge-yes">✔ Annual (after PPT)</span></td>
+        </tr>
+        <tr>
+          <td>Bonus / Returns</td>
+          <td>Reversionary + FAB</td>
+          <td>None (pure risk cover)</td>
+          <td>Guaranteed annuity rate</td>
+          <td>Reversionary + FAB</td>
+          <td>Reversionary + FAB</td>
+        </tr>
+        <tr>
+          <td>Loan Facility</td>
+          <td><span class="badge-yes">✔ Available</span></td>
+          <td><span class="badge-no">✘ Not available</span></td>
+          <td><span class="badge-yes">✔ Available</span></td>
+          <td><span class="badge-yes">✔ Available</span></td>
+          <td><span class="badge-yes">✔ Available</span></td>
+        </tr>
+        <tr>
+          <td>Surrender Value</td>
+          <td><span class="badge-yes">✔ After 3 yrs</span></td>
+          <td><span class="badge-no">✘ No</span></td>
+          <td><span class="badge-yes">✔ Available</span></td>
+          <td><span class="badge-yes">✔ After 3 yrs</span></td>
+          <td><span class="badge-yes">✔ After 3 yrs</span></td>
+        </tr>
+        <tr>
+          <td>Tax Benefit (u/s 80C)</td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+          <td><span class="badge-yes">✔ 80CCC</span></td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+          <td><span class="badge-yes">✔ Yes</span></td>
+        </tr>
+        <tr>
+          <td>Online Purchase</td>
+          <td><span class="badge-no">✘ Offline only</span></td>
+          <td><span class="badge-yes">✔ Online + Offline</span></td>
+          <td><span class="badge-no">✘ Offline only</span></td>
+          <td><span class="badge-no">✘ Offline only</span></td>
+          <td><span class="badge-no">✘ Offline only</span></td>
+        </tr>
+        <tr>
+          <td>Max Entry Age</td>
+          <td>50 years</td>
+          <td>65 years</td>
+          <td>79 years</td>
+          <td>59 years</td>
+          <td>55 years</td>
+        </tr>
+        <tr>
+          <td>Best For</td>
+          <td>Family protection + savings</td>
+          <td>Pure life coverage</td>
+          <td>Retirement income</td>
+          <td>Long-term wealth creation</td>
+          <td>Regular income + legacy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top: 1.5rem; padding: 1.2rem; background: var(--white); border-radius: 12px; border: 1px solid var(--border);">
+    <div style="font-family: 'Playfair Display', serif; font-size: 15px; margin-bottom: 8px;">Not sure which plan suits you?</div>
+    <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 1rem;">Visit licindia.in or call LIC's helpline for personalised advice based on your age, income, and goals.</div>
+    <a href="https://licindia.in" target="_blank" class="help-action-btn">Visit licindia.in →</a>
+  </div>
+</div>
+
+<!-- ===== TAB: CALCULATOR ===== -->
+<div id="tab-calc" class="section hidden">
+  <div class="section-header">
+    <div class="gold-line"></div>
+    <div class="section-title">Premium Calculator</div>
+    <div class="section-subtitle">Estimate your LIC premium. For official quotes, visit licindia.in.</div>
+  </div>
+
+  <div class="calc-card">
+    <div class="calc-body">
+      <div class="calc-grid">
+        <div class="form-group">
+          <label for="planType">Plan Type</label>
+          <select id="planType" onchange="calcPremium()">
+            <option value="endowment">Endowment (Jeevan Anand / Jeevan Labh)</option>
+            <option value="term">Term Plan (Tech Term / Jeevan Amar)</option>
+            <option value="moneyback">Money Back (20 / 25 Year)</option>
+            <option value="pension">Pension / Annuity</option>
+            <option value="wholelife">Whole Life (Jeevan Umang)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" onchange="calcPremium()">
+            <option value="M">Male</option>
+            <option value="F">Female (lower premium)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="age">Age at Entry (years)</label>
+          <input type="number" id="age" value="30" min="18" max="65" oninput="calcPremium()" />
+        </div>
+        <div class="form-group">
+          <label for="sumAssured">Sum Assured (₹)</label>
+          <input type="number" id="sumAssured" value="1000000" min="100000" step="50000" oninput="calcPremium()" />
+        </div>
+        <div class="form-group">
+          <label for="policyTerm">Policy Term (years)</label>
+          <input type="number" id="policyTerm" value="20" min="10" max="40" oninput="calcPremium()" />
+        </div>
+        <div class="form-group">
+          <label for="payMode">Payment Frequency</label>
+          <select id="payMode" onchange="calcPremium()">
+            <option value="1">Annual</option>
+            <option value="2">Half-Yearly</option>
+            <option value="4">Quarterly</option>
+            <option value="12">Monthly (ECS)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calc-result-panel">
+        <div class="calc-result-label">Estimated Premium</div>
+        <div class="calc-result-main" id="premiumMain">₹4,320</div>
+        <div class="calc-result-sub" id="premiumSub">per month</div>
+        <div class="calc-breakdown">
+          <div class="calc-bk-item">
+            <div class="calc-bk-val" id="annualPremium">₹51,840</div>
+            <div class="calc-bk-label">Per year</div>
+          </div>
+          <div class="calc-bk-divider"></div>
+          <div class="calc-bk-item">
+            <div class="calc-bk-val" id="totalPremium">₹10,36,800</div>
+            <div class="calc-bk-label">Total over term</div>
+          </div>
+          <div class="calc-bk-divider"></div>
+          <div class="calc-bk-item">
+            <div class="calc-bk-val" id="coverAmt">₹10,00,000</div>
+            <div class="calc-bk-label">Life cover</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="primary-btn" onclick="window.open('https://licindia.in','_blank')">Get Official Quote on licindia.in →</button>
+    </div>
+    <div class="calc-note">
+      * These are indicative estimates only. Actual premiums depend on medical history, lifestyle disclosures, optional riders, and LIC's current actuarial tables. GST @ 4.5% (first year) / 2.25% (renewal) applicable additionally.
+    </div>
+  </div>
+
+  <!-- Plan recommendations -->
+  <div style="margin-top: 2rem;">
+    <div class="gold-line"></div>
+    <div class="section-title" style="margin-bottom: 1rem;">Which plan should I choose?</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 14px;">
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem;">
+        <div style="font-size: 22px; margin-bottom: 8px;">👨‍👩‍👧</div>
+        <div style="font-weight: 500; margin-bottom: 4px; font-size: 14px;">For Family Protection</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Jeevan Anand or Tech Term — high cover at affordable premiums to protect your family's income.</div>
+      </div>
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem;">
+        <div style="font-size: 22px; margin-bottom: 8px;">🏫</div>
+        <div style="font-weight: 500; margin-bottom: 4px; font-size: 14px;">For Child's Education</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Jeevan Tarun or New Children Money Back — regular payouts timed with education milestones.</div>
+      </div>
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem;">
+        <div style="font-size: 22px; margin-bottom: 8px;">🌇</div>
+        <div style="font-weight: 500; margin-bottom: 4px; font-size: 14px;">For Retirement Income</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Jeevan Shanti or Jeevan Akshay — guaranteed lifetime pension from a lump sum investment.</div>
+      </div>
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem;">
+        <div style="font-size: 22px; margin-bottom: 8px;">📊</div>
+        <div style="font-weight: 500; margin-bottom: 4px; font-size: 14px;">For Market-linked Growth</div>
+        <div style="font-size: 12px; color: var(--text-muted);">LIC SIIP — ULIP with guaranteed additions, combine insurance with equity/debt fund growth.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TAB: CONTACT ===== -->
+<div id="tab-contact" class="section hidden">
+  <div class="section-header">
+    <div class="gold-line"></div>
+    <div class="section-title">Contact & Support</div>
+    <div class="section-subtitle">Reach LIC through any of these channels</div>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <span class="contact-emoji">📞</span>
+      <div class="contact-title">Customer Helpline</div>
+      <div class="contact-val">
+        022-68276827<br>
+        Toll-free: <strong>1800-227-717</strong><br>
+        Mon–Sat, 9 AM – 6 PM
+      </div>
+    </div>
+    <div class="contact-card">
+      <span class="contact-emoji">🌐</span>
+      <div class="contact-title">Official Website</div>
+      <div class="contact-val">
+        <a href="https://licindia.in" target="_blank">licindia.in</a><br>
+        Policy services, premium payment, status tracking
+      </div>
+    </div>
+    <div class="contact-card">
+      <span class="contact-emoji">📧</span>
+      <div class="contact-title">Grievance Email</div>
+      <div class="contact-val">
+        <a href="mailto:co_grievance@licindia.com">co_grievance@licindia.com</a><br>
+        Response within 7–10 working days
+      </div>
+    </div>
+    <div class="contact-card">
+      <span class="contact-emoji">💬</span>
+      <div class="contact-title">WhatsApp</div>
+      <div class="contact-val">
+        <strong>+91-8976862090</strong><br>
+        Policy details, premium reminders, status
+      </div>
+    </div>
+    <div class="contact-card">
+      <span class="contact-emoji">📱</span>
+      <div class="contact-title">LIC Mobile App</div>
+      <div class="contact-val">
+        <a href="https://play.google.com/store/apps/details?id=com.licindia.mobile" target="_blank">Download on Play Store</a><br>
+        Available on App Store too
+      </div>
+    </div>
+    <div class="contact-card">
+      <span class="contact-emoji">🏢</span>
+      <div class="contact-title">Find a Branch</div>
+      <div class="contact-val">
+        2000+ offices across India<br>
+        <a href="https://licindia.in/contact-us/branch-locator" target="_blank">Branch Locator →</a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <span class="contact-emoji">🧑‍💼</span>
+      <div class="contact-title">Find an Agent</div>
+      <div class="contact-val">
+        <a href="https://licindia.in" target="_blank">Locate LIC Agent →</a><br>
+        Doorstep service across India
+      </div>
+    </div>
+    <div class="contact-card">
+      <span class="contact-emoji">⚖️</span>
+      <div class="contact-title">Insurance Ombudsman</div>
+      <div class="contact-val">
+        For unresolved complaints<br>
+        <a href="https://cioins.co.in" target="_blank">cioins.co.in →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="help-box">
+    <div class="help-box-title">Frequently Asked Questions</div>
+    <div class="help-box-sub">Quick links for common queries</div>
+    <div class="help-actions">
+      <a class="help-action-btn" href="https://licindia.in/customer-services/online-services" target="_blank">Online Policy Services</a>
+      <a class="help-action-btn" href="https://licindia.in/customer-services/premium-payment" target="_blank">Pay Premium Online</a>
+      <a class="help-action-btn" href="https://licindia.in/customer-services/claims" target="_blank">File a Claim</a>
+      <a class="help-action-btn" href="https://licindia.in/customer-services/policy-status" target="_blank">Check Policy Status</a>
+      <a class="help-action-btn" href="https://licindia.in/customer-services/loan-against-policy" target="_blank">Loan Against Policy</a>
+    </div>
+  </div>
+
+  <div style="background: var(--dark-blue); border-radius: 14px; padding: 2rem; text-align: center;">
+    <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; margin-bottom: 8px;">Ready to secure your future?</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 1.4rem; max-width: 400px; margin-left: auto; margin-right: auto;">Talk to an LIC agent or buy online. Most plans start at just a few hundred rupees a month.</div>
+    <button onclick="window.open('https://licindia.in','_blank')" style="background: var(--gold); color: #fff; border: none; padding: 12px 28px; border-radius: 24px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer;">Buy a Plan on licindia.in →</button>
+  </div>
+</div>
+
+<!-- PLAN DETAILS MODAL -->
+<div id="planModal" class="plan-modal-overlay" onclick="if(event.target===this)closePlanModal()">
+  <div class="plan-modal-box">
+    <button class="plan-modal-close" onclick="closePlanModal()">✕</button>
+    <div id="planModalContent"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>LIC Policy Plans — Informational Reference Website</strong><br>
+  This is a non-official informational website. For verified policy details and official services, visit
+  <a href="https://licindia.in" target="_blank">licindia.in</a> or call <strong>1800-227-717</strong>.<br>
+  <br>
+  LIC of India | CIN: L65110MH1956GOI009410 | IRDA Registration No. 512<br>
+  © 2024 Life Insurance Corporation of India. All rights reserved.
+</footer>
+
+<script>
+  // ── Tab switching ──
+  function showTab(id, btn) {
+    ['plans','compare','calc','contact'].forEach(function(t) {
+      var el = document.getElementById('tab-' + t);
+      if (el) el.classList.toggle('hidden', t !== id);
+    });
+    document.querySelectorAll('.tab-btn').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    if (btn) btn.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── Filter plans ──
+  function filterPlans(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.plan-card').forEach(function(card) {
+      var c = card.getAttribute('data-category');
+      card.classList.toggle('hidden', cat !== 'all' && c !== cat);
+    });
+  }
+
+  // ── Plan selection / compare ──
+  var selected = [];
+
+  function toggleSelect(card, name) {
+    var idx = selected.indexOf(name);
+    if (idx > -1) {
+      selected.splice(idx, 1);
+      card.classList.remove('selected');
+    } else if (selected.length < 4) {
+      selected.push(name);
+      card.classList.add('selected');
+    } else {
+      alert('You can compare up to 4 plans at a time. Remove one to add another.');
+    }
+    updateCompareBar();
+  }
+
+  function updateCompareBar() {
+    var bar = document.getElementById('compareBar');
+    var chips = document.getElementById('compareChips');
+    bar.classList.toggle('show', selected.length > 0);
+    chips.innerHTML = selected.map(function(n) {
+      return '<div class="chip">' + n + '<span class="chip-x" onclick="removeChip(\'' + n.replace(/'/g, "\\'") + '\')">×</span></div>';
+    }).join('');
+  }
+
+  function removeChip(name) {
+    selected = selected.filter(function(n) { return n !== name; });
+    document.querySelectorAll('.plan-card').forEach(function(card) {
+      var nm = card.querySelector('.plan-name');
+      if (nm && nm.textContent.trim() === name) card.classList.remove('selected');
+    });
+    updateCompareBar();
+  }
+
+  function clearAll() {
+    selected = [];
+    document.querySelectorAll('.plan-card').forEach(function(c) { c.classList.remove('selected'); });
+    updateCompareBar();
+  }
+
+  // ── Plan Details Data ──
+  var planDetails = {
+    'jeevan-anand': {
+      name: 'LIC Jeevan Anand (915)',
+      icon: '🛡️',
+      tag: 'Endowment',
+      tagClass: 'tag-endowment',
+      minSA: '₹1,00,000',
+      entryAge: '18 – 50 years',
+      maturityAge: 'Up to 75 years',
+      policyTerm: '15 – 35 years',
+      premiumTerm: 'Same as policy term',
+      loanAvailable: 'Yes (after 3 years)',
+      surrenderValue: 'Yes (after 3 years)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        'Participating whole-life endowment plan',
+        'On survival to maturity: Basic Sum Assured + Bonuses paid',
+        'Life cover continues after maturity till death — no extra premium',
+        'On death after maturity: Sum Assured paid again to nominee',
+        'Reversionary bonuses & Final Additional Bonus declared annually',
+        'Optional riders: Accidental Death, Accidental Disability, Critical Illness'
+      ],
+      overview: 'LIC Jeevan Anand is a classic dual-benefit plan: you get savings (maturity payout) AND lifelong protection. After you receive the maturity amount, the base Sum Assured stays active as a death cover until the policyholder passes away — at no extra cost. This makes it one of the most popular LIC plans in India.'
+    },
+    'jeevan-labh': {
+      name: 'LIC Jeevan Labh (836)',
+      icon: '💰',
+      tag: 'Endowment',
+      tagClass: 'tag-endowment',
+      minSA: '₹2,00,000',
+      entryAge: '8 – 59 years',
+      maturityAge: 'Up to 75 years',
+      policyTerm: '16, 21, or 25 years',
+      premiumTerm: '10, 15, or 16 years (shorter than policy term)',
+      loanAvailable: 'Yes (after 2 years)',
+      surrenderValue: 'Yes (after 2 years)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        'Limited premium paying term — pay less years, stay covered longer',
+        'With-profit plan: earns Simple Reversionary Bonus every year',
+        'Final Additional Bonus (FAB) payable at maturity or death',
+        'On death during policy term: Death Sum Assured + accrued bonuses paid',
+        'On maturity: Basic Sum Assured + accrued bonuses',
+        'Optional riders for Accidental Death & Disability Benefit'
+      ],
+      overview: 'Jeevan Labh is designed for those who want to finish paying premiums early but keep coverage for longer. For example, choose a 25-year policy term but pay only for 16 years. The bonuses keep accumulating throughout the full policy term, maximising your maturity corpus.'
+    },
+    'tech-term': {
+      name: 'LIC Tech Term (854)',
+      icon: '📋',
+      tag: 'Term Plan',
+      tagClass: 'tag-term',
+      minSA: '₹50,00,000',
+      entryAge: '18 – 65 years',
+      maturityAge: 'Up to 80 years',
+      policyTerm: '10 – 40 years',
+      premiumTerm: 'Regular / Limited (5,10 years)',
+      loanAvailable: 'No',
+      surrenderValue: 'No (pure term)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        'Online-only pure protection plan — lowest premiums in LIC portfolio',
+        'Option 1: Level Sum Assured (fixed cover throughout)',
+        'Option 2: Increasing Sum Assured (grows 10% every 5 years, max 2x)',
+        'Special rates for non-smokers and women',
+        'Optional riders: Accidental Death Benefit, Disability Benefit',
+        'Death benefit paid as lump sum or in installments'
+      ],
+      overview: 'LIC Tech Term is the go-to plan for pure life cover at the lowest possible cost. Being online-only, it cuts out agent commissions, passing the savings to policyholders. With a minimum cover of ₹50 lakh, it\'s ideal for young earning individuals who want maximum protection for their family.'
+    },
+    'jeevan-amar': {
+      name: 'LIC Jeevan Amar (855)',
+      icon: '🔒',
+      tag: 'Term Plan',
+      tagClass: 'tag-term',
+      minSA: '₹25,00,000',
+      entryAge: '18 – 65 years',
+      maturityAge: 'Up to 80 years',
+      policyTerm: '10 – 40 years',
+      premiumTerm: 'Regular / Limited (5,10,15 years)',
+      loanAvailable: 'No',
+      surrenderValue: 'No (pure term)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        'Offline version of Tech Term — available through LIC agents',
+        'Two sum assured options: Level or Increasing (by 10% every 5 years)',
+        'Flexible premium payment: single, limited, or regular',
+        'Optional Critical Illness rider available',
+        'Accidental Death & Disability Benefit Rider available',
+        'Special lower rates for non-smokers'
+      ],
+      overview: 'Jeevan Amar is the offline counterpart of Tech Term, bought through LIC agents. It offers the same pure protection with flexible rider options. The minimum sum assured is ₹25 lakh (half of Tech Term), making it accessible to a broader audience who prefer in-person guidance.'
+    },
+    'jeevan-shanti': {
+      name: 'LIC New Jeevan Shanti (858)',
+      icon: '🌅',
+      tag: 'Pension',
+      tagClass: 'tag-pension',
+      minSA: '₹1,50,000 (purchase price)',
+      entryAge: '30 – 79 years',
+      maturityAge: 'Lifelong annuity',
+      policyTerm: 'Deferred period: 1–12 years',
+      premiumTerm: 'Single premium only',
+      loanAvailable: 'Yes (after 1 year)',
+      surrenderValue: 'Yes (special surrender)',
+      taxBenefit: 'Sec 80CCC',
+      keyFeatures: [
+        'Single premium deferred annuity — pay once, receive pension for life',
+        'Option A: Deferred annuity for single life',
+        'Option B: Deferred annuity for joint life (self + spouse)',
+        '7 annuity sub-options — with/without return of purchase price',
+        'Guaranteed annuity rates locked at inception',
+        'Loan facility available after 1 policy year'
+      ],
+      overview: 'New Jeevan Shanti is ideal for pre-retirees who have a lump sum to invest. You pay once and LIC guarantees you a pension for life. The deferment period (1–12 years) lets the corpus grow before annuity payments begin, increasing your monthly income significantly.'
+    },
+    'jeevan-umang': {
+      name: 'LIC Jeevan Umang (945)',
+      icon: '🌟',
+      tag: 'Whole Life',
+      tagClass: 'tag-wholelife',
+      minSA: '₹2,00,000',
+      entryAge: '90 days – 55 years',
+      maturityAge: '100 years (or death)',
+      policyTerm: 'Up to age 100',
+      premiumTerm: '15, 20, 25, or 30 years',
+      loanAvailable: 'Yes (after 2 years)',
+      surrenderValue: 'Yes (after 2 years)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        '8% of Sum Assured paid annually after premium term ends (survival benefit)',
+        'Annual payouts continue till death or maturity at age 100',
+        'Lump sum = Full Sum Assured + Bonuses at maturity (age 100)',
+        'On death: Death Sum Assured + Bonuses paid to nominee',
+        'Eligible for Simple Reversionary Bonus and Final Additional Bonus',
+        'Optional Accidental Death & Disability Benefit Rider'
+      ],
+      overview: 'Jeevan Umang is unique — after you stop paying premiums, LIC pays YOU every year for the rest of your life! You receive 8% of the Sum Assured annually. For a ₹10 lakh policy, that\'s ₹80,000/year. Plus, if you live to 100 (or die earlier), your nominee gets the full Sum Assured + bonuses. It\'s a savings plan that turns into a pension.'
+    },
+    'jeevan-tarun': {
+      name: 'LIC Jeevan Tarun (834)',
+      icon: '👶',
+      tag: "Children's Plan",
+      tagClass: 'tag-child',
+      minSA: '₹75,000',
+      entryAge: '0 – 12 years (child)',
+      maturityAge: '25 years (child\'s age)',
+      policyTerm: '25 minus entry age',
+      premiumTerm: '20 minus entry age',
+      loanAvailable: 'Yes (after 2 years)',
+      surrenderValue: 'Yes (after 2 years)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        'Designed for children\'s education and future financial needs',
+        'Survival benefits between ages 20–24 (flexible % options)',
+        'Option 1: 100% at maturity; Option 2–5: 5%–25% annually from age 20',
+        'Remaining amount + bonuses paid at maturity (age 25)',
+        'Inbuilt Payor Premium Waiver: premiums waived if parent dies',
+        'Earning starts at 15% bonus per year from inception'
+      ],
+      overview: 'Jeevan Tarun is crafted for parents planning their child\'s higher education (ages 18–25). The survival benefit options let you choose how much cash you want during the child\'s college years. The premium waiver means the policy continues even if the parent passes away — the child\'s future is protected regardless.'
+    },
+    'siip': {
+      name: 'LIC SIIP (852)',
+      icon: '📈',
+      tag: 'ULIP',
+      tagClass: 'tag-ulip',
+      minSA: '₹40,000/year premium',
+      entryAge: '90 days – 55 years',
+      maturityAge: 'Up to 70 years',
+      policyTerm: '10 – 25 years',
+      premiumTerm: 'Same as policy term (regular)',
+      loanAvailable: 'Yes (after 5 years)',
+      surrenderValue: 'Yes (after 5 years, full)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        'Unit-linked plan: your premium invested in market-linked funds',
+        '4 fund options: Bond, Secured, Balanced, Growth (equity-heavy)',
+        'Guaranteed additions of 0.10% of fund value from 6th year onward',
+        'Partial withdrawals allowed after 5th policy year',
+        'Unlimited free fund switches per year',
+        'On maturity: Fund Value paid; On death: Higher of Fund Value or Sum Assured'
+      ],
+      overview: 'LIC SIIP combines insurance with market-linked investment. Unlike traditional LIC plans, returns here depend on fund performance. The guaranteed additions from year 6 onward are a unique feature. Best suited for younger investors (age 25–40) with a long investment horizon who want equity exposure with the security of LIC backing.'
+    },
+    'aadhaar-shila': {
+      name: 'LIC Aadhaar Shila (844)',
+      icon: '🧕',
+      tag: "Women's Plan",
+      tagClass: 'tag-women',
+      minSA: '₹75,000',
+      entryAge: '8 – 55 years (women only)',
+      maturityAge: 'Up to 70 years',
+      policyTerm: '10 – 20 years',
+      premiumTerm: 'Same as policy term',
+      loanAvailable: 'Yes (after 3 years)',
+      surrenderValue: 'Yes (after 3 years)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        'Exclusively for female lives with valid Aadhaar',
+        'No medical examination required up to ₹3,00,000 SA',
+        'Inbuilt Accidental Death & Disability Benefit Rider (no extra cost)',
+        'Loyalty Additions payable at maturity (min. 5-year policy)',
+        'On maturity: Sum Assured + Loyalty Additions',
+        'On death: Sum Assured + Loyalty Additions paid to nominee'
+      ],
+      overview: 'Aadhaar Shila is LIC\'s dedicated plan for women, leveraging the Aadhaar identity system for simplified issuance. The built-in accidental rider at no extra charge and the no-medical-exam feature up to ₹3 lakh make it extremely accessible — even for women in rural areas or with no prior insurance experience.'
+    },
+    'cancer-cover': {
+      name: 'LIC Cancer Cover (905)',
+      icon: '💊',
+      tag: 'Health',
+      tagClass: 'tag-health',
+      minSA: '₹10,00,000',
+      entryAge: '20 – 65 years',
+      maturityAge: 'Up to 75 years',
+      policyTerm: '10 – 30 years',
+      premiumTerm: 'Same as policy term',
+      loanAvailable: 'No',
+      surrenderValue: 'No',
+      taxBenefit: 'Sec 80D',
+      keyFeatures: [
+        'Stage-based cancer benefit: Early Stage = 25% of SA; Major Stage = 100% of SA',
+        'Premium waiver for 3 years on early-stage diagnosis',
+        'Increasing benefit option: SA grows by 10% each year (max 150%)',
+        'Coverage for all stages and types of cancer',
+        'Payable even if already claimed early-stage benefit earlier',
+        'No sub-limits or hospital bills — direct cash payout'
+      ],
+      overview: 'LIC Cancer Cover is a pure health benefit plan — not a reimbursement policy. On diagnosis, a fixed sum is paid directly to you regardless of actual treatment costs. The two-tier benefit (25% at early stage + 100% at major stage) ensures you get support from detection, not just at advanced stages. Premium waiver on early detection is a standout feature.'
+    },
+    'children-money-back': {
+      name: 'New Children Money Back (932)',
+      icon: '🎓',
+      tag: "Children's Plan",
+      tagClass: 'tag-child',
+      minSA: '₹1,00,000',
+      entryAge: '0 – 12 years (child)',
+      maturityAge: '25 years (child\'s age)',
+      policyTerm: '25 minus entry age',
+      premiumTerm: '25 minus entry age',
+      loanAvailable: 'Yes (after 2 years)',
+      surrenderValue: 'Yes (after 2 years)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        '20% of SA at age 18 (school completion)',
+        '20% of SA at age 20 (college year 2)',
+        '20% of SA at age 22 (graduation)',
+        '40% of SA + accrued bonuses at maturity (age 25)',
+        'Inbuilt Proposer Premium Waiver — premiums waived if parent dies',
+        'Full Death Benefit paid regardless of any survival benefits already received'
+      ],
+      overview: 'This money-back plan is designed around a child\'s educational milestones. At every key stage — school completion, college years, and career start — the plan delivers a payout. The premium waiver on the parent\'s death is inbuilt at no extra cost. Even if survival benefits have been paid, the full death sum assured is still available to the child.'
+    },
+    'pmvvy': {
+      name: 'PM Vaya Vandana Yojana (842)',
+      icon: '🏛️',
+      tag: 'Pension',
+      tagClass: 'tag-pension',
+      minSA: '₹1,62,162 (for ₹12,000/yr pension)',
+      entryAge: '60+ years',
+      maturityAge: 'After 10 years',
+      policyTerm: '10 years fixed',
+      premiumTerm: 'Single premium only',
+      loanAvailable: 'Yes (after 3 years, up to 75% of purchase price)',
+      surrenderValue: 'Yes (early exit for critical illness)',
+      taxBenefit: 'Under NPS provisions',
+      keyFeatures: [
+        'Government-backed scheme exclusively for senior citizens (60+)',
+        'Guaranteed return of 8% per annum (govt. subsidised)',
+        'Pension modes: monthly, quarterly, half-yearly, or yearly',
+        'Maximum investment: ₹15 lakh per senior citizen',
+        'On maturity: full purchase price returned + final pension',
+        'On death during term: purchase price returned to nominee'
+      ],
+      overview: 'PMVVY is a government-subsidised pension scheme managed by LIC for senior citizens. The guaranteed 8% p.a. return is funded by the central government, making it risk-free. It provides stable, predictable income for 10 years — ideal for retirees who need monthly income without market risk. Maximum ₹15 lakh per person.'
+    },
+    'dhan-rekha': {
+      name: 'LIC Dhan Rekha (863)',
+      icon: '💎',
+      tag: 'Endowment',
+      tagClass: 'tag-endowment',
+      minSA: '₹2,00,000',
+      entryAge: '3 – 60 years',
+      maturityAge: 'Up to 75 years',
+      policyTerm: '15, 20, or 25 years',
+      premiumTerm: '5, 6, or 10 years',
+      loanAvailable: 'Yes (after 2 full years\' premium)',
+      surrenderValue: 'Yes (after 2 years)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        'Non-linked, non-participating — fully guaranteed benefits',
+        'Guaranteed Additions added to policy at fixed rate each year',
+        'Guaranteed Survival Benefits paid at regular intervals during policy term',
+        'On maturity: Sum Assured + all Guaranteed Additions + Survival Benefit',
+        'Pay for just 5/6/10 years and enjoy long-term coverage',
+        'No market risk — all returns are guaranteed upfront'
+      ],
+      overview: 'Dhan Rekha stands apart because every benefit is guaranteed — there are no bonuses that depend on LIC\'s performance. You know exactly what you\'ll receive at every stage. The short premium term (5–10 years) with regular payout milestones makes it popular with people who want certainty in their financial planning.'
+    },
+    'jeevan-akshay': {
+      name: 'LIC Jeevan Akshay VII (857)',
+      icon: '♾️',
+      tag: 'Pension',
+      tagClass: 'tag-pension',
+      minSA: '₹1,00,000 (purchase price)',
+      entryAge: '30 – 85 years',
+      maturityAge: 'Lifelong annuity',
+      policyTerm: 'Immediate annuity (no waiting)',
+      premiumTerm: 'Single premium only',
+      loanAvailable: 'No',
+      surrenderValue: 'Limited (specific option types)',
+      taxBenefit: 'Sec 80CCC',
+      keyFeatures: [
+        'Immediate annuity — pension starts from next month after purchase',
+        '10 annuity options: life only, with return of purchase price, joint life, etc.',
+        'Option F: Return of 100% purchase price to nominee on death',
+        'Option J: Joint life last survivor with 50% to spouse',
+        'Pension payable monthly, quarterly, half-yearly, or yearly',
+        'No medical examination required'
+      ],
+      overview: 'Jeevan Akshay VII is for those who need immediate regular income. Pay once and receive pension from next month — for life. With 10 annuity options, you can choose whether your nominee gets anything back. Option F (return of purchase price) is most popular, as it offers good lifetime income while returning the principal to your family.'
+    },
+    'saral-jeevan': {
+      name: 'LIC Saral Jeevan Bima (859)',
+      icon: '🤝',
+      tag: 'Term Plan',
+      tagClass: 'tag-term',
+      minSA: '₹5,00,000',
+      entryAge: '18 – 65 years',
+      maturityAge: 'Up to 70 years',
+      policyTerm: '5 – 40 years',
+      premiumTerm: 'Regular / Single / Limited',
+      loanAvailable: 'No',
+      surrenderValue: 'No (pure term)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        'Standard, simple term plan — same features across all insurers (IRDAI mandate)',
+        'Sum Assured: ₹5 lakh to ₹25 lakh',
+        'No medical exam required for many entry ages & small SA',
+        'Waiting period of 45 days (except accidental death)',
+        'On death: full Sum Assured paid to nominee',
+        'Ideal for first-time insurance buyers needing basic protection'
+      ],
+      overview: 'Saral Jeevan Bima was introduced by IRDAI to make term insurance accessible to everyone, regardless of literacy or financial knowledge. The product features are standardised across all insurers — making it easy to understand and compare. It\'s the starting point for anyone who has never bought insurance before.'
+    },
+    'new-money-back-20': {
+      name: 'LIC New Money Back – 20 Years (920)',
+      icon: '💸',
+      tag: 'Money Back',
+      tagClass: 'tag-endowment',
+      minSA: '₹1,00,000',
+      entryAge: '13 – 50 years',
+      maturityAge: 'Up to 70 years',
+      policyTerm: '20 years',
+      premiumTerm: '15 years',
+      loanAvailable: 'Yes (after 3 years)',
+      surrenderValue: 'Yes (after 3 years)',
+      taxBenefit: 'Sec 80C & 10(10D)',
+      keyFeatures: [
+        '15% of SA paid at end of 5th year (survival benefit)',
+        '15% of SA paid at end of 10th year',
+        '15% of SA paid at end of 15th year',
+        '55% of SA + all accrued bonuses paid at maturity (year 20)',
+        'Death benefit = full 100% SA + bonuses regardless of survival payouts made',
+        'Eligible for Simple Reversionary Bonus + Final Additional Bonus'
+      ],
+      overview: 'The New Money Back 20-Year plan combines liquidity with long-term savings. Every 5 years you receive cash, helping with periodic financial needs (children\'s schooling, home renovation, etc.). The beauty is the full death cover remains intact throughout — your nominee gets 100% SA + bonuses even if all three survival payouts have been made to you.'
+    }
+  };
+
+  function openLIC(slug) {
+    showPlanDetails(slug);
+  }
+
+  function showPlanDetails(slug) {
+    var plan = planDetails[slug];
+    if (!plan) return;
+
+    var modal = document.getElementById('planModal');
+    var content = document.getElementById('planModalContent');
+
+    var featuresHTML = plan.keyFeatures.map(function(f) {
+      return '<li>' + f + '</li>';
+    }).join('');
+
+    content.innerHTML = [
+      '<div class="modal-plan-header">',
+        '<div class="modal-plan-icon">' + plan.icon + '</div>',
+        '<div>',
+          '<div class="modal-plan-name">' + plan.name + '</div>',
+          '<span class="plan-tag ' + plan.tagClass + '" style="margin-bottom:0">' + plan.tag + '</span>',
+        '</div>',
+      '</div>',
+      '<div class="modal-overview">' + plan.overview + '</div>',
+      '<div class="modal-section-title">Plan at a Glance</div>',
+      '<div class="modal-specs-grid">',
+        '<div class="modal-spec"><div class="modal-spec-label">Min. Sum Assured</div><div class="modal-spec-val">' + plan.minSA + '</div></div>',
+        '<div class="modal-spec"><div class="modal-spec-label">Entry Age</div><div class="modal-spec-val">' + plan.entryAge + '</div></div>',
+        '<div class="modal-spec"><div class="modal-spec-label">Policy Term</div><div class="modal-spec-val">' + plan.policyTerm + '</div></div>',
+        '<div class="modal-spec"><div class="modal-spec-label">Premium Paying Term</div><div class="modal-spec-val">' + plan.premiumTerm + '</div></div>',
+        '<div class="modal-spec"><div class="modal-spec-label">Loan Available</div><div class="modal-spec-val">' + plan.loanAvailable + '</div></div>',
+        '<div class="modal-spec"><div class="modal-spec-label">Tax Benefit</div><div class="modal-spec-val">' + plan.taxBenefit + '</div></div>',
+      '</div>',
+      '<div class="modal-section-title">Key Features</div>',
+      '<ul class="modal-features">' + featuresHTML + '</ul>',
+      '<div class="modal-footer-note">For official policy documents, premium quotes, and to purchase, visit <a href="https://licindia.in" target="_blank">licindia.in</a> or contact your LIC agent.</div>'
+    ].join('');
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePlanModal() {
+    document.getElementById('planModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePlanModal();
+  });
+
+  // ── Premium Calculator ──
+  function calcPremium() {
+    var type     = document.getElementById('planType').value;
+    var age      = parseInt(document.getElementById('age').value)        || 30;
+    var sa       = parseInt(document.getElementById('sumAssured').value) || 1000000;
+    var term     = parseInt(document.getElementById('policyTerm').value) || 20;
+    var mode     = parseInt(document.getElementById('payMode').value)    || 1;
+    var gender   = document.getElementById('gender').value;
+
+    // Base rate per 1000 SA (approximate)
+    var baseRates = { endowment: 52, term: 3, moneyback: 60, pension: 90, wholelife: 55 };
+    var base = (baseRates[type] || 52) / 1000;
+
+    // Age factor
+    var ageFactor = 1 + (age - 25) * 0.013;
+    // Gender discount
+    var genderFactor = gender === 'F' ? 0.94 : 1.0;
+    // Term adjustment for endowment/whole life
+    var termFactor = (type === 'endowment' || type === 'wholelife')
+      ? Math.max(0.75, 1.25 - term * 0.025)
+      : 1;
+
+    var annualPremium = Math.round((sa * base * ageFactor * genderFactor * termFactor) / 100) * 100;
+    var perPeriod     = Math.round(annualPremium / mode / 10) * 10;
+    var totalPremium  = annualPremium * term;
+
+    var modeLabel = { 1: 'per year', 2: 'per half-year', 4: 'per quarter', 12: 'per month' }[mode] || 'per year';
+
+    document.getElementById('premiumMain').textContent = '₹' + perPeriod.toLocaleString('en-IN');
+    document.getElementById('premiumSub').textContent  = modeLabel + ' (approx.)';
+    document.getElementById('annualPremium').textContent  = '₹' + annualPremium.toLocaleString('en-IN');
+    document.getElementById('totalPremium').textContent   = '₹' + totalPremium.toLocaleString('en-IN');
+    document.getElementById('coverAmt').textContent       = '₹' + sa.toLocaleString('en-IN');
+  }
+
+  calcPremium();
+</script>
+</body>
+<meta name="google-adsense-account" content="ca-pub-9235107701002025">
+</html>
